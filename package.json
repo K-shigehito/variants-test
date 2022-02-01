@@ -1,5 +1,5 @@
 {
-  "name": "variants-test",
+  "name": "my-template",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
