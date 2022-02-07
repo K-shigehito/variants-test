@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ButtonSample from './components/ButtonSample.vue';
+</script>
 
 <template>
-  <div class="bg-slate-300 p-4 pt-2">test</div>
+  <ButtonSample />
 </template>
 
 <style></style>
