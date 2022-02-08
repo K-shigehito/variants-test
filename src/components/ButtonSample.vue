@@ -8,10 +8,20 @@ const handleClick = () => {
 <template>
   <div class="m-4 space-y-4">
     <div class="space-x-4">
-      <BaseButton type="primary" size="small" icon @click="handleClick">
+      <BaseButton
+        type="primary"
+        size="small"
+        icon="update"
+        @click="handleClick"
+      >
         Button
       </BaseButton>
-      <BaseButton type="primary" size="middle" @click="handleClick">
+      <BaseButton
+        type="primary"
+        size="middle"
+        icon="calendar"
+        @click="handleClick"
+      >
         Button
       </BaseButton>
       <BaseButton type="primary" size="large" @click="handleClick">

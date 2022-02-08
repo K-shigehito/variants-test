@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import ButtonIcon from './ButtonIcon.vue';
 
 interface Props {
   type: 'primary' | 'outline';
   size: 'small' | 'middle' | 'large';
-  icon: boolean;
+  icon: string;
 }
 interface Emits {
   (e: 'click'): void;
@@ -13,7 +14,7 @@ interface Emits {
 const props = withDefaults(defineProps<Props>(), {
   type: 'primary',
   size: 'small',
-  icon: false,
+  icon: '',
 });
 const emit = defineEmits<Emits>();
 
@@ -41,16 +42,16 @@ const sizeClass = computed(() => {
     return '';
   }
 });
-const iconClass = computed(() => (props.icon ? ' after:content-["■"]' : ''));
 </script>
 
 <template>
   <button
     class="font-roboto"
-    :class="[typeClass, sizeClass, iconClass]"
+    :class="[typeClass, sizeClass]"
     @click="handleClick"
   >
     <slot />
+    <ButtonIcon v-if="props.icon" :icon="props.icon"></ButtonIcon>
   </button>
 </template>
 
