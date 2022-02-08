@@ -5,7 +5,7 @@ import ButtonIcon from './ButtonIcon.vue';
 interface Props {
   type: 'primary' | 'outline';
   size: 'small' | 'middle' | 'large';
-  icon: string;
+  icon?: string;
 }
 interface Emits {
   (e: 'click'): void;
@@ -42,16 +42,32 @@ const sizeClass = computed(() => {
     return '';
   }
 });
+const iconSize = computed(() => {
+  if (props.size === 'small') {
+    return 16;
+  } else if (props.size === 'middle') {
+    return 21;
+  } else if (props.size === 'large') {
+    return 28;
+  } else {
+    return '';
+  }
+});
 </script>
 
 <template>
   <button
-    class="font-roboto"
+    class="flex items-center gap-2.5 font-roboto"
     :class="[typeClass, sizeClass]"
     @click="handleClick"
   >
     <slot />
-    <ButtonIcon v-if="props.icon" :icon="props.icon"></ButtonIcon>
+    <ButtonIcon
+      v-if="props.icon"
+      :icon="props.icon"
+      :width="iconSize"
+      :height="iconSize"
+    ></ButtonIcon>
   </button>
 </template>
 

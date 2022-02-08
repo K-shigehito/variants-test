@@ -1,9 +1,9 @@
 <script setup lang="ts">
 interface Props {
-  iconName: string;
+  iconName?: string;
   width: number | string;
   height: number | string;
-  iconColor: string;
+  iconColor?: string;
 }
 const props = withDefaults(defineProps<Props>(), {
   iconName: '',
@@ -29,11 +29,3 @@ const props = withDefaults(defineProps<Props>(), {
     </g>
   </svg>
 </template>
-
-<style scoped>
-svg {
-  display: inline-block;
-  vertical-align: baseline;
-  margin-bottom: -2px;
-}
-</style>
