@@ -13,7 +13,7 @@ interface Emits {
 const props = withDefaults(defineProps<Props>(), {
   type: 'primary',
   size: 'small',
-  icon: true,
+  icon: false,
 });
 const emit = defineEmits<Emits>();
 
@@ -41,12 +41,13 @@ const sizeClass = computed(() => {
     return '';
   }
 });
+const iconClass = computed(() => (props.icon ? ' after:content-["■"]' : ''));
 </script>
 
 <template>
   <button
     class="font-roboto"
-    :class="[typeClass, sizeClass]"
+    :class="[typeClass, sizeClass, iconClass]"
     @click="handleClick"
   >
     <slot />
