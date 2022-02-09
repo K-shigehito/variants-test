@@ -84,6 +84,44 @@ const handleClick = () => {
         Button
       </BaseButton>
     </div>
+
+    <div class="flex items-center gap-4">
+      <BaseButton type="primary" size="small" icon="edit" @click="handleClick">
+        Button
+      </BaseButton>
+      <BaseButton type="primary" size="middle" icon="edit" @click="handleClick">
+        Button
+      </BaseButton>
+      <BaseButton type="primary" size="large" icon="edit" @click="handleClick">
+        Button
+      </BaseButton>
+    </div>
+    <div class="flex items-center gap-4">
+      <BaseButton
+        type="primary"
+        size="small"
+        icon="favorite"
+        @click="handleClick"
+      >
+        Button
+      </BaseButton>
+      <BaseButton
+        type="primary"
+        size="middle"
+        icon="favorite"
+        @click="handleClick"
+      >
+        Button
+      </BaseButton>
+      <BaseButton
+        type="primary"
+        size="large"
+        icon="favorite"
+        @click="handleClick"
+      >
+        Button
+      </BaseButton>
+    </div>
   </div>
 </template>
 

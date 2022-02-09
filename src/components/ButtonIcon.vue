@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import BaseIcon from './icons/BaseIcon.vue';
 import IconSearch from './icons/IconSearch.vue';
+import IconEdit from './icons/IconEdit.vue';
+import IconFavorite from './icons/IconFavorite.vue';
 
 interface Props {
   icon: string;
@@ -15,10 +17,9 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <BaseIcon
-    :width="props.width"
-    :height="props.height"
-  >
-    <IconSearch />
+  <BaseIcon :width="props.width" :height="props.height">
+    <IconSearch v-if="props.icon === 'search'" />
+    <IconEdit v-else-if="props.icon === 'edit'" />
+    <IconFavorite v-else-if="props.icon === 'favorite'"></IconFavorite>
   </BaseIcon>
 </template>
